@@ -63,7 +63,7 @@ const Header = ({ scrollToSection,setActiveSection,activeSection }) => {
 
         {/* Menú desplegable (móviles) */}
         {menuOpen && (
-          <div className="md:hidden mt-4 bg-white rounded shadow-lg pb-12 pt-8  space-y-6 flex flex-col">
+          <div className="md:hidden fixed w-full  mt-4 bg-white rounded shadow-lg pb-12 pt-8  space-y-6 flex  flex-col">
             <button onClick={() => handleClick("inicio")} className={getButtonClass("inicio")}>
               Inicio
             </button>

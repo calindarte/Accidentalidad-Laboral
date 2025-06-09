@@ -1,10 +1,18 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Metodos = () => {
-     const [tab, setTab] = useState("sustitucion");
+  const [tab, setTab] = useState("sustitucion");
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 30 },
+    transition: { duration: 0.5, ease: "easeOut" },
+  };
 
   return (
-    <section id="metodos" className=" px-12 md:px-32">
+    <section id="metodos" className="px-12 md:px-32">
       <h2 className="text-2xl md:text-4xl text-center font-bold text-slate-800 flex items-center mb-12">
         Métodos para resolver ecuaciones de primer grado
       </h2>
@@ -42,11 +50,17 @@ const Metodos = () => {
         </button>
       </div>
 
-      {/* Contenido de pestañas */}
-      {tab === "sustitucion" && (
-        <div className="bg-white rounded-xl shadow p-6 mt-6">
-          <h3 className="text-xl font-bold mb-4">Método de Sustitución</h3>
-          <p className=" text-slate-600 mb-4 text-justify">
+      {/* Contenido de pestañas con animación */}
+      <AnimatePresence mode="wait">
+        {tab === "sustitucion" && (
+          <motion.div
+            key="sustitucion"
+            {...fadeInUp}
+            className="bg-white rounded-xl shadow p-6 mt-6"
+          >
+            {/* (Contenido existente sin cambios) */}
+            <h3 className="text-xl font-bold mb-4">Método de Sustitución</h3>
+            <p className=" text-slate-600 mb-4 text-justify">
             El método de sustitución, para resolver un sistema de dos ecuaciones
             con dos incógnitas, consiste en despejar una incógnita en una de las
             ecuaciones y sustituirla en la otra; así, se obtiene una sola
@@ -56,7 +70,7 @@ const Metodos = () => {
           </p>
 
           <div className="bg-slate-50 rounded-lg p-6">
-            <h4 className="font-semibold mb-4 text-slate-800">
+            <h4 className="font-semibold mb-4 text-slate-800 text-justify">
               Ejemplo: Se analiza el efecto de los turnos diurnos y nocturnos en
               los accidentes.
             </h4>
@@ -65,7 +79,7 @@ const Metodos = () => {
               <p>
                 <span className="font-semibold text-orange-600">Datos:</span>
               </p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-disc list-inside space-y-1 text-justify">
                 <li>D: accidentes diurnos</li>
                 <li>N: accidentes nocturnos</li>
                 <li>Total de accidentes por semana: D + N = 20</li>
@@ -105,21 +119,25 @@ const Metodos = () => {
               </p>
             </div>
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
 
-      {tab === "eliminacion" && (
-        <div className="bg-white rounded-xl shadow p-6 mt-6">
-          <h3 className="text-xl font-bold mb-4">
-            Método de Reducción o Eliminación
-          </h3>
-          <p className="text-slate-600 mb-4 text-justify">
+        {tab === "eliminacion" && (
+          <motion.div
+            key="eliminacion"
+            {...fadeInUp}
+            className="bg-white rounded-xl shadow p-6 mt-6"
+          >
+            <h3 className="text-xl font-bold mb-4">
+              Método de Reducción o Eliminación
+            </h3>
+             <p className="text-slate-600 mb-4 text-justify">
             El método de reducción o método de eliminación, en ecuaciones de
             primer grado consiste en sumar o restar dos ecuaciones de un sistema
             para eliminar una de las incógnitas, lo que permite resolver el
             sistema paso a paso, consiste en lo siguiente:
           </p>
-          <ul className="list-disc list-inside text-sm text-slate-700 mb-6 pl-4">
+          <ul className="list-disc text-justify list-inside text-sm text-slate-700 mb-6 pl-4">
             <li>
               Se restan las dos ecuaciones resultantes, con lo que se elimina
               una incógnita.
@@ -132,7 +150,7 @@ const Metodos = () => {
           </ul>
 
           <div className="bg-slate-50 rounded-lg p-6">
-            <h4 className="font-semibold mb-4 text-slate-800">
+            <h4 className="font-semibold mb-4 text-slate-800 text-justify">
               Ejemplo: Se supone que en una empresa se analizan accidentes en
               dos áreas distintas: A y B.
             </h4>
@@ -182,13 +200,17 @@ const Metodos = () => {
               </p>
             </div>
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
 
-      {tab === "igualacion" && (
-        <div className="bg-white rounded-xl shadow p-6 mt-6">
-          <h3 className="text-xl font-bold mb-4">Método de Igualación</h3>
-          <p className="text-slate-600 mb-4 text-justify">
+        {tab === "igualacion" && (
+          <motion.div
+            key="igualacion"
+            {...fadeInUp}
+            className="bg-white rounded-xl shadow p-6 mt-6"
+          >
+            <h3 className="text-xl font-bold mb-4">Método de Igualación</h3>
+            <p className="text-slate-600 mb-4 text-justify">
             El método de igualación en ecuaciones de primer grado consiste en
             despejar la misma variable en ambas ecuaciones de un sistema y luego
             igualar esas expresiones para encontrar el valor de una incógnita.
@@ -196,8 +218,8 @@ const Metodos = () => {
             obtener la otra variable.
           </p>
 
-          <div className="bg-slate-50 rounded-lg p-6">
-            <h4 className="font-semibold mb-4 text-slate-800">
+          <div className="bg-slate-50 rounded-lg p-6 ">
+            <h4 className="font-semibold mb-4 text-slate-800 text-justify ">
               Ejemplo: En una empresa se analiza la cantidad de accidentes
               ocurridos en dos de sus departamentos.
             </h4>
@@ -206,7 +228,7 @@ const Metodos = () => {
               <p>
                 <span className="font-semibold text-orange-600">Datos:</span>
               </p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-disc list-inside space-y-1 text-justify">
                 <li>
                   La suma de los accidentes de los dos departamentos da 26: A +
                   B = 26
@@ -242,7 +264,7 @@ const Metodos = () => {
               <p>A = 9 + 8</p>
               <p>A = 17</p>
 
-              <p className="mt-4 font-semibold text-green-700">Conclusión:</p>
+              <p className="mt-4 font-semibold text-green-700 ">Conclusión:</p>
               <p>
                 Accidentes en el primer departamento: <strong>17</strong>
               </p>
@@ -251,10 +273,12 @@ const Metodos = () => {
               </p>
             </div>
           </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
 export default Metodos;
+

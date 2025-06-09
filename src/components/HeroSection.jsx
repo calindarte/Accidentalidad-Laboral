@@ -16,14 +16,14 @@ const HeroSection = ({ scrollToSection }) => {
             Universidad del Magdalena • Junio 2025
           </span>
 
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight pr-12">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight md:pr-12">
             Accidentalidad Laboral en una
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
               {" "}Empresa
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-xl">
+          <p className=" md:text-xl text-slate-600 mb-8 leading-relaxed max-w-xl">
             Aplicación de ecuaciones de primer grado en el análisis de accidentalidad laboral.
           </p>
 
@@ -32,17 +32,17 @@ const HeroSection = ({ scrollToSection }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection("definicion")}
-              className="flex items-center px-6 py-3 text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition"
+              className="flex items-center text-sm md:text-base px-3 md:px-6 py-3 text-white bg-orange-600 hover:bg-orange-700 rounded-lg transition"
             >
               Explorar Conceptos
-              <ChevronRight className="ml-2" />
+              <ChevronRight className="md:ml-2" />
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection("ejemplos")}
-              className="flex items-center px-6 py-3 border border-gray-300 text-gray-800 hover:bg-gray-100 rounded-lg transition"
+              className="flex items-center text-sm md:text-base px-3 md:px-6 py-3 border border-gray-300 text-gray-800 hover:bg-gray-100 rounded-lg transition"
             >
               Ver Ejemplos
               <Calculator className="ml-2 h-4 w-4" />
