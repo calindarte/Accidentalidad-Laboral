@@ -8,6 +8,7 @@ import Autores from "./Autores";
 import Header from "../components/Header";
 import Marco from "./Marco";
 import Metodos from "./Metodos";
+import Videos from "./Videos";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("inicio");
@@ -63,6 +64,7 @@ const Home = () => {
       <Metodos/>
       {/* Ejemplos Prácticos */}
       <Ejemplos />
+      <Videos/>
 
       {/* Autores */}
       <Autores />

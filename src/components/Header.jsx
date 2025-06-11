@@ -56,8 +56,9 @@ const Header = ({ scrollToSection,setActiveSection,activeSection }) => {
               Métodos
             </button>
             <button onClick={() => handleClick("ejemplos")} className={getButtonClass("ejemplos")}>
-              Ejemplos
+              Ejercicios
             </button>
+           
           </div>
         </nav>
 
@@ -80,8 +81,9 @@ const Header = ({ scrollToSection,setActiveSection,activeSection }) => {
               Métodos
             </button>
             <button onClick={() => handleClick("ejemplos")} className={getButtonClass("ejemplos")}>
-              Ejemplos
+              Ejercicios
             </button>
+            
           </div>
         )}
       </div>
